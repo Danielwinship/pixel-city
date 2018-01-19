@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" rotateEnabled="NO" pitchEnabled="NO" showsUserLocation="YES" showsCompass="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sx-tX-AZM">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="646"/>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wtK-rc-dTX">
                                 <rect key="frame" x="0.0" y="20" width="375" height="70"/>
@@ -47,7 +47,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3f-Yp-v5f">
-                                <rect key="frame" x="315" y="597" width="50" height="50"/>
+                                <rect key="frame" x="315" y="596" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="Z1n-ee-zvD"/>
                                     <constraint firstAttribute="height" constant="50" id="ddi-LZ-E4X"/>
@@ -58,34 +58,34 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uh-bB-ls5">
-                                <rect key="frame" x="0.0" y="667" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="666" width="375" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="bHt-8b-me4"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1uh-bB-ls5" firstAttribute="top" secondItem="8sx-tX-AZM" secondAttribute="bottom" id="23f-4d-ZQ1"/>
                             <constraint firstItem="wtK-rc-dTX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3c6-2s-hWW"/>
                             <constraint firstItem="wtK-rc-dTX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ACz-M2-gAX"/>
-                            <constraint firstItem="8sx-tX-AZM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EDr-yI-ofZ"/>
-                            <constraint firstItem="1uh-bB-ls5" firstAttribute="top" secondItem="O3f-Yp-v5f" secondAttribute="bottom" constant="20" id="IqX-cG-zPw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1uh-bB-ls5" secondAttribute="trailing" id="Z4v-t7-RuS"/>
                             <constraint firstItem="8sx-tX-AZM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a3n-On-1Wz"/>
                             <constraint firstItem="1uh-bB-ls5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dmc-FI-bat"/>
-                            <constraint firstItem="1uh-bB-ls5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="1" id="fuw-AS-EoT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8sx-tX-AZM" secondAttribute="trailing" id="hKv-9d-353"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8sx-tX-AZM" secondAttribute="bottom" id="jfj-Gf-2L3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8sx-tX-AZM" secondAttribute="bottom" id="uJC-Lx-p5j"/>
                             <constraint firstItem="wtK-rc-dTX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uVX-Z7-qJn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1uh-bB-ls5" secondAttribute="bottom" id="ukC-c9-ed6"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O3f-Yp-v5f" secondAttribute="trailing" constant="10" id="vOc-S3-wba"/>
                             <constraint firstItem="8sx-tX-AZM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wXE-Ue-WGq"/>
-                            <constraint firstItem="1uh-bB-ls5" firstAttribute="top" secondItem="8sx-tX-AZM" secondAttribute="bottom" id="zdh-C9-hB5"/>
+                            <constraint firstItem="1uh-bB-ls5" firstAttribute="top" secondItem="O3f-Yp-v5f" secondAttribute="bottom" constant="20" id="zdh-C9-hB5"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="8sx-tX-AZM" id="2Ul-v5-tTp"/>
-                        <outlet property="mapViewBottomConstraint" destination="zdh-C9-hB5" id="ZMQ-kf-hiO"/>
                         <outlet property="pullUpView" destination="1uh-bB-ls5" id="mK8-G8-14w"/>
+                        <outlet property="pullUpViewHeight" destination="bHt-8b-me4" id="ldt-x6-d1j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
