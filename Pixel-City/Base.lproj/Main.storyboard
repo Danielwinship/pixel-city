@@ -58,7 +58,7 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uh-bB-ls5">
-                                <rect key="frame" x="0.0" y="667" width="375" height="0.0"/>
+                                <rect key="frame" x="0.0" y="667" width="375" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                         </subviews>
@@ -67,13 +67,13 @@
                             <constraint firstItem="wtK-rc-dTX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3c6-2s-hWW"/>
                             <constraint firstItem="wtK-rc-dTX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="ACz-M2-gAX"/>
                             <constraint firstItem="8sx-tX-AZM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EDr-yI-ofZ"/>
+                            <constraint firstItem="1uh-bB-ls5" firstAttribute="top" secondItem="O3f-Yp-v5f" secondAttribute="bottom" constant="20" id="IqX-cG-zPw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1uh-bB-ls5" secondAttribute="trailing" id="Z4v-t7-RuS"/>
                             <constraint firstItem="8sx-tX-AZM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="a3n-On-1Wz"/>
                             <constraint firstItem="1uh-bB-ls5" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dmc-FI-bat"/>
-                            <constraint firstItem="1uh-bB-ls5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="fuw-AS-EoT"/>
+                            <constraint firstItem="1uh-bB-ls5" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="1" id="fuw-AS-EoT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8sx-tX-AZM" secondAttribute="trailing" id="hKv-9d-353"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8sx-tX-AZM" secondAttribute="bottom" id="jfj-Gf-2L3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O3f-Yp-v5f" secondAttribute="bottom" constant="20" id="okM-pX-ajz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8sx-tX-AZM" secondAttribute="bottom" id="uJC-Lx-p5j"/>
                             <constraint firstItem="wtK-rc-dTX" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="uVX-Z7-qJn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O3f-Yp-v5f" secondAttribute="trailing" constant="10" id="vOc-S3-wba"/>
@@ -84,6 +84,8 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="8sx-tX-AZM" id="2Ul-v5-tTp"/>
+                        <outlet property="mapViewBottomConstraint" destination="zdh-C9-hB5" id="ZMQ-kf-hiO"/>
+                        <outlet property="pullUpView" destination="1uh-bB-ls5" id="mK8-G8-14w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
