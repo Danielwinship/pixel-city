@@ -45,7 +45,7 @@ class MapVC: UIViewController,UIGestureRecognizerDelegate {
         collectionView?.register(PhotoCell.self, forCellWithReuseIdentifier: "photoCell")
         collectionView?.delegate = self
         collectionView?.dataSource = self
-        collectionView?.backgroundColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
+        collectionView?.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         pullUpView.addSubview(collectionView!)
     }
     
@@ -139,10 +139,14 @@ extension MapVC: MKMapViewDelegate {
     }
     
     @objc func dropPin(sender: UITapGestureRecognizer) {
+        
         removePin()
         removeSpinner()
         removeProgressLabel()
         canelAllSessions()
+        imageArray.removeAll()
+        imageUrlArray.removeAll()
+        collectionView?.reloadData()
         animateViewUp()
         addSwipe()
         addSpinner()
@@ -166,6 +170,7 @@ extension MapVC: MKMapViewDelegate {
                     if finished {
                         self.removeSpinner()
                         self.removeProgressLabel()
+                        self.collectionView?.reloadData()
                     }
                 })
             }
@@ -180,9 +185,9 @@ extension MapVC: MKMapViewDelegate {
     }
     
     func retrieveUrls(forAnnotation annoation:DroppablePin, handler: @escaping(_ status:Bool)-> () ) {
-        imageUrlArray.removeAll()
         
-        Alamofire.request(flickrURL(apiKey: apiKey, withAnnotation: annoation, andNumberOfPhotos: 40)).responseJSON { (response) in
+        
+        Alamofire.request(flickrURL(apiKey: apiKey, withAnnotation: annoation, andNumberOfPhotos: 20)).responseJSON { (response) in
             guard let json = response.result.value as? Dictionary<String, AnyObject> else {return}
             let photosDict = json["photos"] as! Dictionary<String, AnyObject>
             let photosDictArray = photosDict["photo"] as! [Dictionary<String, AnyObject>]
@@ -195,7 +200,7 @@ extension MapVC: MKMapViewDelegate {
     }
     
     func retrieveImages(handler: @escaping(_ status:Bool)->() ) {
-        imageArray.removeAll()
+        
         
         for url in imageUrlArray {
             Alamofire.request(url).responseImage(completionHandler: { (response) in
@@ -245,13 +250,16 @@ extension MapVC: UICollectionViewDelegate,UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         //number of items array
-        return 4
+        
+        return imageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCell
-        return cell!
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCell else {return UICollectionViewCell()}
+        let imageFromIndex = imageArray[indexPath.row]
+        let imageView = UIImageView(image: imageFromIndex)
+        cell.addSubview(imageView)
+        return cell
     }
 }
 
