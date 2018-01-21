@@ -206,7 +206,7 @@ extension MapVC: MKMapViewDelegate {
             Alamofire.request(url).responseImage(completionHandler: { (response) in
                 guard let image = response.result.value else {return}
                 self.imageArray.append(image)
-                self.progressLabel?.text = "\(self.imageArray.count)/40 Images Downloaded"
+                self.progressLabel?.text = "\(self.imageArray.count)/20 Images Downloaded"
                 
                 if self.imageArray.count == self.imageUrlArray.count {
                     handler(true)
