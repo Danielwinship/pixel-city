@@ -142,6 +142,7 @@ extension MapVC: MKMapViewDelegate {
         removePin()
         removeSpinner()
         removeProgressLabel()
+        canelAllSessions()
         animateViewUp()
         addSwipe()
         addSpinner()
