@@ -13,6 +13,9 @@
         <array key="Avenir.ttc">
             <string>Avenir-Heavy</string>
         </array>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue</string>
+        </array>
     </customFonts>
     <scenes>
         <!--MapVC-->
@@ -91,6 +94,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+        <!--PopVC-->
+        <scene sceneID="I8Y-Yq-Ys7">
+            <objects>
+                <viewController storyboardIdentifier="PopVC" id="8Pt-bV-GWL" customClass="PopVC" customModule="Pixel_City" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a9H-A2-Wfp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uvL-TT-KQb">
+                                <rect key="frame" x="0.0" y="29" width="375" height="638"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ca9-el-t4h">
+                                <rect key="frame" x="87" y="622" width="200" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Double Tap To Dismiss" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Alh-GL-ejH">
+                                        <rect key="frame" x="13.5" y="2.5" width="173" height="20"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Alh-GL-ejH" firstAttribute="centerY" secondItem="ca9-el-t4h" secondAttribute="centerY" id="EL2-Vo-h0S"/>
+                                    <constraint firstAttribute="width" constant="200" id="Eqk-Ia-ahV"/>
+                                    <constraint firstAttribute="height" constant="25" id="cqz-TC-eqA"/>
+                                    <constraint firstItem="Alh-GL-ejH" firstAttribute="centerX" secondItem="ca9-el-t4h" secondAttribute="centerX" id="rH8-uL-zR6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uvL-TT-KQb" firstAttribute="leading" secondItem="3mR-B9-qM0" secondAttribute="leading" id="6FU-iK-clI"/>
+                            <constraint firstItem="ca9-el-t4h" firstAttribute="centerX" secondItem="a9H-A2-Wfp" secondAttribute="centerX" id="JsZ-8g-YsZ"/>
+                            <constraint firstItem="3mR-B9-qM0" firstAttribute="bottom" secondItem="uvL-TT-KQb" secondAttribute="bottom" id="P91-oZ-wZT"/>
+                            <constraint firstItem="3mR-B9-qM0" firstAttribute="trailing" secondItem="uvL-TT-KQb" secondAttribute="trailing" id="VRq-ev-BZG"/>
+                            <constraint firstItem="3mR-B9-qM0" firstAttribute="bottom" secondItem="ca9-el-t4h" secondAttribute="bottom" constant="20" id="ZSn-dc-gUS"/>
+                            <constraint firstItem="uvL-TT-KQb" firstAttribute="top" secondItem="3mR-B9-qM0" secondAttribute="top" constant="9" id="tfR-5e-ZXH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3mR-B9-qM0"/>
+                    </view>
+                    <connections>
+                        <outlet property="popImageView" destination="uvL-TT-KQb" id="985-4e-vmJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SgE-g9-D6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="898" y="137"/>
         </scene>
     </scenes>
     <resources>
