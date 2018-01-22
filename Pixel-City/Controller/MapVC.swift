@@ -187,7 +187,7 @@ extension MapVC: MKMapViewDelegate {
     func retrieveUrls(forAnnotation annoation:DroppablePin, handler: @escaping(_ status:Bool)-> () ) {
         
         
-        Alamofire.request(flickrURL(apiKey: apiKey, withAnnotation: annoation, andNumberOfPhotos: 20)).responseJSON { (response) in
+        Alamofire.request(flickrURL(apiKey: apiKey, withAnnotation: annoation, andNumberOfPhotos: 40)).responseJSON { (response) in
             guard let json = response.result.value as? Dictionary<String, AnyObject> else {return}
             let photosDict = json["photos"] as! Dictionary<String, AnyObject>
             let photosDictArray = photosDict["photo"] as! [Dictionary<String, AnyObject>]
@@ -206,7 +206,7 @@ extension MapVC: MKMapViewDelegate {
             Alamofire.request(url).responseImage(completionHandler: { (response) in
                 guard let image = response.result.value else {return}
                 self.imageArray.append(image)
-                self.progressLabel?.text = "\(self.imageArray.count)/20 Images Downloaded"
+                self.progressLabel?.text = "\(self.imageArray.count) Images Downloaded"
                 
                 if self.imageArray.count == self.imageUrlArray.count {
                     handler(true)
@@ -258,6 +258,8 @@ extension MapVC: UICollectionViewDelegate,UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photoCell", for: indexPath) as? PhotoCell else {return UICollectionViewCell()}
         let imageFromIndex = imageArray[indexPath.row]
         let imageView = UIImageView(image: imageFromIndex)
+        cell.contentMode = UIViewContentMode.scaleAspectFill
+        cell.layer.masksToBounds = true
         cell.addSubview(imageView)
         return cell
     }

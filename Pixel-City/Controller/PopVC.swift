@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PopVC: UIViewController,UIGestureRecognizer {
+class PopVC: UIViewController,UIGestureRecognizerDelegate {
 
     //Outlets
     @IBOutlet weak var popImageView: UIImageView!
@@ -21,7 +21,7 @@ class PopVC: UIViewController,UIGestureRecognizer {
     override func viewDidLoad() {
         super.viewDidLoad()
         popImageView.image = passedImage
-        // Do any additional setup after loading the view.
+        addDoubleTap()
     }
 
     func addDoubleTap() {
