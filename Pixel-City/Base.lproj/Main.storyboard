@@ -15,6 +15,7 @@
         </array>
         <array key="HelveticaNeue.ttc">
             <string>HelveticaNeue</string>
+            <string>HelveticaNeue-Bold</string>
         </array>
     </customFonts>
     <scenes>
@@ -124,6 +125,15 @@
                                     <constraint firstItem="Alh-GL-ejH" firstAttribute="centerX" secondItem="ca9-el-t4h" secondAttribute="centerX" id="rH8-uL-zR6"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6e-hR-vgy" userLabel="Title Label">
+                                <rect key="frame" x="10" y="35" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YEE-hw-Lbc"/>
+                                    <constraint firstAttribute="width" constant="250" id="kaG-kZ-2Ts"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -132,17 +142,20 @@
                             <constraint firstItem="3mR-B9-qM0" firstAttribute="bottom" secondItem="uvL-TT-KQb" secondAttribute="bottom" id="P91-oZ-wZT"/>
                             <constraint firstItem="3mR-B9-qM0" firstAttribute="trailing" secondItem="uvL-TT-KQb" secondAttribute="trailing" id="VRq-ev-BZG"/>
                             <constraint firstItem="3mR-B9-qM0" firstAttribute="bottom" secondItem="ca9-el-t4h" secondAttribute="bottom" constant="20" id="ZSn-dc-gUS"/>
+                            <constraint firstItem="t6e-hR-vgy" firstAttribute="leading" secondItem="3mR-B9-qM0" secondAttribute="leading" constant="10" id="aJK-bD-8qZ"/>
+                            <constraint firstItem="t6e-hR-vgy" firstAttribute="top" secondItem="3mR-B9-qM0" secondAttribute="top" constant="15" id="ne7-qw-ZRf"/>
                             <constraint firstItem="uvL-TT-KQb" firstAttribute="top" secondItem="3mR-B9-qM0" secondAttribute="top" constant="9" id="tfR-5e-ZXH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3mR-B9-qM0"/>
                     </view>
                     <connections>
                         <outlet property="popImageView" destination="uvL-TT-KQb" id="985-4e-vmJ"/>
+                        <outlet property="titleLabel" destination="t6e-hR-vgy" id="bvA-aO-fgf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SgE-g9-D6U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="898" y="137"/>
+            <point key="canvasLocation" x="896.79999999999995" y="136.28185907046478"/>
         </scene>
     </scenes>
     <resources>
